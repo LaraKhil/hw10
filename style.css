@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --blue-cl:#00AED9;
+    --font-grey-cl:#3C3C3C;
+    --font-grey-light-cl:#646464;
+    --underline:#e7e5e5;
+    --white:#fff;
+    --blue-light-cl:#7cc8db;
+    --font-grey-dark-cl:#282528; 
+}
+body{
+    font-family: 'Lato', sans-serif;
+    margin:0;
+    padding:0;
+}
+img{
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width:100%;
+    height: 100%;
+}
+h1{
+    font-weight: 600;
+    max-width:274px;
+    height: 40px;
+    font-size:30px;
+    letter-spacing: 5.4px;
+    color:var(--font-grey-cl);
+}
+h2{
+    font-size:18px;
+    font-weight: 600;
+    color:var(--font-grey-dark-cl);
+    margin-bottom: 0;
+}
+p{
+    max-width:570px;
+    font-weight: 300;
+    font-size:16px;
+    color:var(--font-grey-light-cl);
+}
+/* Header */
+.wrapper{
+    display: flex;
+    width: 100vw;
+    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.underline{
+    width:2.8rem;
+    height:4px;
+    background-color:var(--underline);
+}
+.header *{
+    text-align: center;
+    margin:0 auto; 
+}
+.header{
+    margin-bottom: 3rem;
+}
+/* Section of Flip cards */
+.flip-container{
+    display:flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+.flip{
+    display:flex;
+    justify-content: space-between;
+}
+.flip-card{
+    position:relative;
+    width:268px;
+    height:269px;
+    perspective: 1500px;
+}
+.front-card{
+    transform: rotateY(0);
+}
+.back-card{
+    transform: rotateY(180deg);
+    background-color:var(--blue-cl);
+}  
+.card{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transition:all 0.7s linear; 
+    box-shadow: 2px 2px 4px rgba(128, 128, 128, 0.418), -2px -2px 4px rgba(128, 128, 128, 0.308); 
+}
+.flip-card:hover .front-card{
+    transform: rotateY(-180deg);
+}
+.flip-card:hover .back-card{
+    transform: rotateY(0);
+}
+.links{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    margin:0;
+    list-style: none;
+    padding:0;
+}
+a[href]{
+    background-color:var(--blue-light-cl);
+    padding:.5rem;
+    font-size: 28px;
+    color:var(--white);
+    transition: all 0.3s linear;
+   
+}
+li{
+  margin-right:0.4rem;
+}
+li:hover a{
+    color:var(--font-grey-cl);
+}
+
+.flip-title p{
+    font-size:14px;
+    margin-top: 0;
+}
+/* Section of Z-index cards */

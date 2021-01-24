@@ -71,7 +71,7 @@ p{
 }
 .flip{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 .flip-card{
     position:relative;
@@ -133,3 +133,35 @@ li:hover a{
     margin-top: 0;
 }
 /* Section of Z-index cards */
+.z-index-container{
+    display:flex;
+    justify-content: flex-start;
+    margin-top: 3rem;
+}
+.z-index-card{
+    width:268px;
+    height:269px;
+    perspective: 1300px;
+    position: relative; 
+    transition:all 5s ease-in;
+}
+.z-index-front{
+    z-index:1;  
+}
+.z-index-back{
+    background-color: var(--blue-cl);
+}
+.z-index-front,
+.z-index-back{
+    position:absolute;
+    width:100%;
+    height:100%; 
+    top:0;
+    left:0;
+}
+.z-index-card:hover .z-index-front{
+    z-index: -10;
+ 
+    
+}
+

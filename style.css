@@ -143,13 +143,16 @@ li:hover a{
     height:269px;
     perspective: 1300px;
     position: relative; 
-    transition:all 5s ease-in;
 }
 .z-index-front{
     z-index:1;  
+    opacity: 1;
+    
 }
 .z-index-back{
     background-color: var(--blue-cl);
+    opacity: 0;
+    
 }
 .z-index-front,
 .z-index-back{
@@ -158,10 +161,12 @@ li:hover a{
     height:100%; 
     top:0;
     left:0;
+    transition: opacity .4s linear;
 }
 .z-index-card:hover .z-index-front{
-    z-index: -10;
- 
-    
+    opacity:0;
+    z-index: -10; 
 }
-
+.z-index-card:hover .z-index-back{
+    opacity: 1;
+}
